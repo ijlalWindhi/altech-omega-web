@@ -19,14 +19,13 @@ function Pricing() {
     >
       <motion.div
         ref={headingRef}
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex flex-col gap-4 w-full justify-center items-center text-center"
       >
         <h2 className="font-bold text-primary text-lg xs:text-2xl xl:text-5xl">
-          Our
-          <span className="text-black">Pricing</span>
+          Our <span className="text-black">Pricing</span>
         </h2>
         <p className="text-gray-500 text-xs md:text-sm xl:text-base sm:max-w-[70%] md:max-w-[50%]">
           Try our service for free for 30 days. If you are satisfied, you can

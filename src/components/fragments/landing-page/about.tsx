@@ -18,8 +18,8 @@ function About() {
       <div className="flex flex-col gap-4 w-full sm:max-w-[50%]">
         <motion.div
           ref={headingRef}
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col gap-2"
         >
@@ -37,8 +37,8 @@ function About() {
         </motion.div>
         <motion.div
           ref={featuresRef}
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="grid grid-cols-1 xs:grid-cols-2 gap-3"
         >
@@ -66,7 +66,7 @@ function About() {
         <div className="w-full my-auto xs:w-[80%] sm:w-[90%] md:w-[90%] lg:w-[60%] xl:w-[60%]">
           <img
             src={HeaderImage}
-            alt="Header Image"
+            alt="About decoration"
             className="w-full h-full object-cover"
           />
         </div>
