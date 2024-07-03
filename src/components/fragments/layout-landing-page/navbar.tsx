@@ -1,8 +1,8 @@
-"use client";
-import { useState } from "react";
-import { AlignCenter, X } from "lucide-react";
-import { motion } from "framer-motion";
-import { NavMenu } from "@/constants/index";
+import { useState } from 'react';
+import { AlignJustify, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { NavMenu } from '@/constants/index';
 
 function Navbar() {
   // state
@@ -11,16 +11,18 @@ function Navbar() {
   // handler
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+    element?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <header className="flex justify-between items-center gap-4 py-2 px-4 md:px-8 lg:px-20 xl:px-32 shadow-sm sm:py-4 fixed w-full z-50 bg-white">
-      <img
-        src="https://altechomega.com/wp-content/uploads/2020/09/logo-e1668010727869.png"
-        alt="Altech Omega Logo"
-        className="w-32"
-      />
+      <Link to="/">
+        <img
+          src="https://altechomega.com/wp-content/uploads/2020/09/logo-e1668010727869.png"
+          alt="Altech Omega Logo"
+          className="w-32"
+        />
+      </Link>
       <div className="hidden sm:flex gap-4 md:gap-10 justify-center items-center">
         {NavMenu.map((menu) => (
           <p
@@ -35,26 +37,28 @@ function Navbar() {
           </p>
         ))}
       </div>
-      <button
-        className="hidden text-sm md:text-base font-medium sm:block bg-primary text-white px-5 py-2 rounded-full"
-        aria-label="Daftar Sekarang"
-      >
-        Login
-      </button>
+      <Link to="/login">
+        <button
+          className="hidden text-sm md:text-base font-medium sm:block bg-primary text-white px-5 py-2 rounded-full"
+          aria-label="Daftar Sekarang"
+        >
+          Login
+        </button>
+      </Link>
       <div className="sm:hidden" onClick={() => setShowMenu(!showMenu)}>
-        {showMenu ? <X size={24} /> : <AlignCenter size={24} />}
+        {showMenu ? <X size={24} /> : <AlignJustify size={24} />}
       </div>
       <motion.div
         className={`absolute sm:hidden top-11 w-full left-0 py-4 bg-white shadow-sm`}
-        initial={{ y: "-100%", opacity: 0 }}
-        animate={{ y: showMenu ? 0 : "-100%", opacity: showMenu ? 1 : 0 }}
-        exit={{ y: "-100%", opacity: 0 }}
+        initial={{ y: '-100%', opacity: 0 }}
+        animate={{ y: showMenu ? 0 : '-100%', opacity: showMenu ? 1 : 0 }}
+        exit={{ y: '-100%', opacity: 0 }}
         hidden={!showMenu}
         transition={{ duration: 0.3 }}
       >
         <div
           className={
-            "flex sm:hidden flex-col gap-3 justify-center items-center"
+            'flex sm:hidden flex-col gap-3 justify-center items-center'
           }
         >
           {NavMenu.map((menu) => (
@@ -69,12 +73,14 @@ function Navbar() {
               {menu.title}
             </p>
           ))}
-          <button
-            className="text-sm font-medium bg-primary text-white px-10 py-2 rounded-full"
-            aria-label="Daftar Sekarang"
-          >
-            Login
-          </button>
+          <Link to="/login">
+            <button
+              className="text-sm font-medium bg-primary text-white px-10 py-2 rounded-full"
+              aria-label="Daftar Sekarang"
+            >
+              Login
+            </button>
+          </Link>
         </div>
       </motion.div>
     </header>
