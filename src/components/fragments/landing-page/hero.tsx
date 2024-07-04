@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { LogoBrand } from '@/constants';
-import HeaderImage from '/public/images/header.png';
+import HeaderImage from '/images/header.png';
 import { motion } from 'framer-motion';
 
 function Hero() {
